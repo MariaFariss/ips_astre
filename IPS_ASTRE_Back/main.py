@@ -32,10 +32,10 @@ app.add_middleware(
 # async def root():
 #     return [transform_to_data_structure()]
 
-@app.get("/")
+@app.get("/student")
 async def root():
     data = transform_to_data_structure()
-    return [{"student ": k, "prediction " : v[0], "score ": v[1]} for k, v in data.items()]
+    return [{"student": k, "prediction" : v[0], "score": v[1]} for k, v in data.items()]
 
 
 @app.get("/hypothesis/{variable}", response_model=List[Dict[str, Union[Tuple[str, ...], int]]])

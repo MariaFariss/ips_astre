@@ -1,46 +1,63 @@
 
 import './App.css';
 import DoughnutChart from './DoughnutChartComponent';
+import BarChart from './BarChartComponent';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
 
 function App() {
 
-  const [data, setData] = useState([]);
   var [hypothesis, setHypothesis] = useState([]);
   var [weightData, setweightData] = useState([]);
+  var [studentArray, setStudentArray] = useState([]);
+  var [weightArray, setWeightArray] = useState([]);
 
-  function setResponse(response) {
+  // hypothesis
+  function setResponseHypothesis(response) {
     console.log(response.data);
     setHypothesis(response.data.map((value)=>(value.hypothesis)));
     setweightData(response.data.map((value)=>(value.value))) ;
-    setData(response.data);
   }
 
-  function fetchAPI(endpoint) {
-    axios.get(`http://127.0.0.1:8000/hypothesis/${endpoint}`).then(setResponse);
+  function fetchAPIHypothesis(endpoint) {
+    axios.get(`http://127.0.0.1:8000/hypothesis/${endpoint}`).then(setResponseHypothesis);
   }
 
 
   useEffect(() => {
-    fetchAPI("astre");
+    fetchAPIHypothesis("astre");
   }, []);
 
   function selectOnclick(value) {
     switch(value.target.value){
       case "ips":
-        fetchAPI("ips");
+        fetchAPIHypothesis("ips");
         break;
       case "astre":
-        fetchAPI("astre");
+        fetchAPIHypothesis("astre");
         
         break;
       default:
-        fetchAPI("ips");
+        fetchAPIHypothesis("ips");
     }
   }
- 
+
+  // student
+  function setResponseStudent(response) {
+    console.log(response.data);
+    setStudentArray(response.data.map((value)=>(value.student)));
+    setWeightArray(response.data.map((value)=>(value.score))) ;
+  }
+
+  function fetchAPIStudent() {
+    axios.get("http://127.0.0.1:8000/student").then(setResponseStudent);
+  }
+
+  useEffect(() => {
+    fetchAPIStudent();
+  }
+  , []);
 
   return (
     <div className="App">
@@ -50,6 +67,7 @@ function App() {
         <option value="astre">ASTRE</option>
       </select>
       <DoughnutChart hypothesis={hypothesis} weightData={weightData}/>
+      <BarChart students={studentArray} weights={weightArray} />
     </div>
   );
 }
