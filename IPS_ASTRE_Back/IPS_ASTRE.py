@@ -24,13 +24,9 @@ def isVerified(hypothesis, answers):
     # print(hypothesis)
     # print("----")
     return True
-                
 
-# I transform the csv table (data) to a data structure like dictionnary 
-def transform_to_data_structure(data=csv_data):
-    scores = {}
-
-    ips_keywords = {
+#hypothesis               
+ips_keywords = {
         ("UX/UI", ): 3,    
         ("VR/AR", ): 3,
         ("Moteurs de jeux vidéo" , "ENSIMERSION" ): 4,
@@ -39,13 +35,17 @@ def transform_to_data_structure(data=csv_data):
         ("UX/UI", "L’esthétique"): 4,
     }
 
-    astre_keywords = {
+astre_keywords = {
         ("Domotique", "Robotique"): -4,
         ("Arduino", ): -3,
         ("Robotique", ): -3,
         ("MAO", "Vim"): -1,
         ("NetBeans", "C++"): -2
     }
+
+# I transform the csv table (data) to a data structure like dictionnary 
+def transform_to_data_structure(data=csv_data):
+    scores = {}
 
     # ips_keywords = {
     #     ('VR/AR', 'ENSIMERSION'): 4,
