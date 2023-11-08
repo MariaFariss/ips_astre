@@ -27,7 +27,7 @@ def isVerified(hypothesis, answers):
                 
 
 # I transform the csv table (data) to a data structure like dictionnary 
-def transform_to_data_structure(data):
+def transform_to_data_structure(data=csv_data):
     scores = {}
 
     ips_keywords = {
@@ -92,7 +92,7 @@ def transform_to_data_structure(data):
 
     return scores
 
-structured_data = transform_to_data_structure(csv_data)
+structured_data = transform_to_data_structure()
 
 # Modélisation des données sous forme d'une structure adaptée (ici, un dictionnaire)
 print(structured_data)
