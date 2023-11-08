@@ -59,6 +59,18 @@ function App() {
   }
   , []);
 
+  // return (
+  //   <div className="App">
+  //     <h1>IPS ASTRE</h1>
+  //     <select onChange={selectOnclick}>
+  //       <option value="ips">IPS</option>
+  //       <option value="astre">ASTRE</option>
+  //     </select>
+  //     <DoughnutChart hypothesis={hypothesis} weightData={weightData}/>
+  //     <BarChart students={studentArray} weights={weightArray} />
+  //   </div>
+  // );
+
   return (
     <div className="App">
       <h1>IPS ASTRE</h1>
@@ -66,8 +78,14 @@ function App() {
         <option value="ips">IPS</option>
         <option value="astre">ASTRE</option>
       </select>
-      <DoughnutChart hypothesis={hypothesis} weightData={weightData}/>
-      <BarChart students={studentArray} weights={weightArray} />
+      <div className="chart-container">
+        <div className="chart">
+          <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
+        </div>
+        <div className="chart">
+          <BarChart students={studentArray} weights={weightArray} />
+        </div>
+      </div>
     </div>
   );
 }

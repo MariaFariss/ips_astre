@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+
+.App {
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 10000px; /* Adjust the width as needed */
+  margin: 0 auto;
+}
+
+.chart {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
