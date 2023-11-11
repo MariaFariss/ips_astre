@@ -8,22 +8,13 @@ const test = (event) => {
   console.log(event);
 };
 
-/* <round-slider
-  min="0"
-  max="100"
-  value="100"
-  arclength="180"
-  startangle="180"
-  value-changed={event => test()}
-/> */
 
-export default function  CircularLiner() {
-  const [value, setValue] = React.useState(0);
+export default function  CircularLiner({hypothesis ,weightData, onChange}) {
   return (
     <div className="CircularLinerComponent">
       {/* <h1 style={{ position: "absolute", marginTop: "40px" }}>$100</h1> */}
       <Roundy
-        value={19}
+        value={Math.abs(weightData)*20}
         // min={10}
         // max={30}
         stepSize={20}
@@ -33,11 +24,10 @@ export default function  CircularLiner() {
         // render={(e) => <p>ss</p>}
         arcSize={180}
         strokeWidth={8}
-        onChange={(value) => setValue(value)}
-        //  onAfterChange={(value, props) => ... }
-        //  overrideStyle={ ... string template as CSS ...}
+        onChange={(e) => onChange(e, hypothesis)}
       />
-      <h2>Start editing to see some magic happen!</h2>
+      <p>{hypothesis.join(' - ')}</p>
+
     </div>
   );
 }

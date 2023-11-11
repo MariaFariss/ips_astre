@@ -44,25 +44,8 @@ astre_keywords = {
     }
 
 # I transform the csv table (data) to a data structure like dictionnary 
-def transform_to_data_structure(data=csv_data):
+def transform_to_data_structure(data=csv_data, ips_keywords=astre_keywords, astre_keywords=astre_keywords):
     scores = {}
-
-    # ips_keywords = {
-    #     ('VR/AR', 'ENSIMERSION'): 4,
-    #     ('Java', 'Frontend / Backend'): 4,
-    #     ('UX/UI', 'UX/UI'): 2,
-    #     ('Moteurs de jeux vidéo', 'ENSIMERSION'): 4,
-    #     ('Freelance (Indépendant)', 'Freelance (Indépendant)'): 2
-    # }
-
-    # astre_keywords = {
-    #     ('C', 'Robotique'): -3,
-    #     ('C++', 'Robotique'): -3,
-    #     ("ENSIM'ELEC", "ENSIM'ELEC"): -1,
-    #     ('Domotique', 'Domotique'): -2,
-    #     ('Arduino', 'Arduino'): -1,
-    # }
-    
     for row in data:
         student_id = row[1]
         score_etu = 0
@@ -77,14 +60,9 @@ def transform_to_data_structure(data=csv_data):
         
         for hypothesis, score in ips_keywords.items():
             if(isVerified(hypothesis, tabResult)): 
-                # print('veruified')
-                # print("ips hypo : ", hypothesis, " result ", tabResult)
                 score_etu += score
         for hypothesis, score in astre_keywords.items():
-            if(isVerified(hypothesis, tabResult)):
-                # print('veruified')
-                
-                # print("astre hypo : ", hypothesis, " result ", tabResult)
+            if(isVerified(hypothesis, tabResult)):   
                 score_etu += score
         
         label = "IPS" if score_etu > 0 else "ASTRE"

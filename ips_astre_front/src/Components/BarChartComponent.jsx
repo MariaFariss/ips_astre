@@ -53,7 +53,7 @@ ChartJS.register(
 //   return <Bar options={options} data={data} />;
 // }
 
-export default function BarChart({ students, weights }) {
+export default function BarChart({ students, scores }) {
   const options = {
     responsive: true,
     plugins: {
@@ -73,12 +73,12 @@ export default function BarChart({ students, weights }) {
     datasets: [
       {
         label: 'astre',
-        data: weights.map((weight) => (weight < 0 ? weight : 0)),
+        data: scores.map((weight) => (weight < 0 ? weight : 0)),
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
       {
         label: 'ips',
-        data: weights.map((weight) => (weight >= 0 ? weight : 0)),
+        data: scores.map((weight) => (weight >= 0 ? weight : 0)),
         backgroundColor: 'rgba(54, 162, 235, 0.5)',
       },
     ],

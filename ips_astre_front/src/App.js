@@ -4,6 +4,7 @@ import DoughnutChart from './Components/DoughnutChartComponent';
 import BarChart from './Components/BarChartComponent';
 import CircularLiner from './Components/CircularLinerComponent';
 // import AppWidgetSummary from './Components/CartComponants';
+// import CircularComponant from './Components/CircularComponant'
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
@@ -13,11 +14,11 @@ function App() {
   var [hypothesis, setHypothesis] = useState([]);
   var [weightData, setweightData] = useState([]);
   var [studentArray, setStudentArray] = useState([]);
-  var [weightArray, setWeightArray] = useState([]);
+  var [studentScore, setStudentScore] = useState([]);
 
   // hypothesis
   function setResponseHypothesis(response) {
-    console.log(response.data);
+    // console.log(response.data);
     setHypothesis(response.data.map((value)=>(value.hypothesis)));
     setweightData(response.data.map((value)=>(value.value))) ;
   }
@@ -28,7 +29,7 @@ function App() {
 
 
   useEffect(() => {
-    fetchAPIHypothesis("astre");
+    fetchAPIHypothesis("ips");
   }, []);
 
   function selectOnclick(value) {
@@ -41,19 +42,45 @@ function App() {
         
         break;
       default:
-        fetchAPIHypothesis("astre");
+        fetchAPIHypothesis("ips");
     }
+  }
+
+  const updateValue = (e, hypothesisArray) => {
+    let newWeightData = [...weightData];
+    let index = hypothesis.indexOf(hypothesisArray);
+    if(weightData[index]<0){
+      e = -e/20
+    }
+    else{
+      e = e/20
+    }
+    newWeightData[index] = e;
+    setweightData(newWeightData)
+    console.log(hypothesisArray);
+    console.log(newWeightData)
+    UpdateAPIStudent(newWeightData)
+
   }
 
   // student
   function setResponseStudent(response) {
     console.log(response.data);
     setStudentArray(response.data.map((value)=>(value.student)));
-    setWeightArray(response.data.map((value)=>(value.score))) ;
+    setStudentScore(response.data.map((value)=>(value.score))) ;
   }
 
   function fetchAPIStudent() {
     axios.get("http://127.0.0.1:8000/student").then(setResponseStudent);
+  }
+
+  function UpdateAPIStudent(weights) {
+    let body = {
+      hypothesis: hypothesis,
+      weight: weights
+    }
+    console.log(body);
+    axios.post('http://127.0.0.1:8000/studentUpdate', body).then(setResponseStudent);
   }
 
   useEffect(() => {
@@ -64,21 +91,25 @@ function App() {
   return (
     <div className="App">
       <h1>IPS ASTRE</h1>
-      <div className="chart">
-        <CircularLiner/>
-      </div>
-    
+
       <select onChange={selectOnclick}>
         <option value="ips">IPS</option>
         <option value="astre">ASTRE</option>
       </select>
+
+      {hypothesis.map((hypo, index)=>(
+        <div className="chart">
+          <CircularLiner hypothesis={hypo} weightData={weightData[index]} onChange={updateValue}/>
+        </div>
+      ))}
       <div className="chart-container">
         <div className="chart">
           <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
         </div>
         <div className="chart">
-          <BarChart students={studentArray} weights={weightArray} />
+          <BarChart students={studentArray} scores={studentScore} />
         </div>
+        {/* <CircularComponant/> */}
       </div>
     </div>
   );
