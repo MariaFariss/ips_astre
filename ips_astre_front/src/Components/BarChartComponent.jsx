@@ -19,39 +19,6 @@ ChartJS.register(
   Legend
 );
 
-// export default function BarChart({students, weights}) {
-//   const options = {
-//     responsive: true,
-//     plugins: {
-//       legend: {
-//         position: 'top',
-//       },
-//       title: {
-//         display: true,
-//         text: 'Chart.js Bar Chart',
-//       },
-//     },
-//   };
-  
-//   const labels = students;
-  
-//   const data = {
-//     labels,
-//     datasets: [
-//       {
-//         label: 'astre',
-//         data: weights.map(w => w < 0),
-//         backgroundColor: 'rgba(255, 99, 132, 0.5)',
-//       },
-//       {
-//         label: 'ips',
-//         data: weights.map(w => w >= 0),
-//         backgroundColor: 'rgba(54, 162, 235, 0.5)',
-//       },
-//     ],
-//   };
-//   return <Bar options={options} data={data} />;
-// }
 
 export default function BarChart({ students, scores }) {
   const options = {

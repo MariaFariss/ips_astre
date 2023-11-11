@@ -34,9 +34,6 @@ def body_to_dictionnary(body):
         dic[tuple(body.hypothesis[i])] = body.weight[i]
     return dic
 
-# @app.get("/")
-# async def root():
-#     return [transform_to_data_structure()]
 
 @app.get("/student")
 async def root():
@@ -68,16 +65,6 @@ async def update(body: Etu):
         ips_keywords = body_to_dictionnary(body)
     datas = transform_to_data_structure(ips_keywords=ips_keywords, astre_keywords=astre_keywords)
     return [{"student": k, "prediction" : v[0], "score": v[1]} for k, v in datas.items()]
-
-# class Etu(BaseModel):
-#     etu: str
-#     num: int
-#     affaires: list
-
-# @app.post('/test')
-# async def test(body: Etu):
-#     print(body)
-#     return body
 
     
  

@@ -3,8 +3,6 @@ import './App.css';
 import DoughnutChart from './Components/DoughnutChartComponent';
 import BarChart from './Components/BarChartComponent';
 import CircularLiner from './Components/CircularLinerComponent';
-// import AppWidgetSummary from './Components/CartComponants';
-// import CircularComponant from './Components/CircularComponant'
 import { useState, useEffect } from "react";
 import axios from 'axios';
 

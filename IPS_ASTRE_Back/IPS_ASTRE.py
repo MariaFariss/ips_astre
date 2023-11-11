@@ -21,8 +21,6 @@ def isVerified(hypothesis, answers):
         # print(keyword)
         if keyword not in answers:
             return False
-    # print(hypothesis)
-    # print("----")
     return True
 
 #hypothesis               
@@ -55,9 +53,6 @@ def transform_to_data_structure(data=csv_data, ips_keywords=astre_keywords, astr
             for keyword in answer.split(';'):
                 tabResult.append(keyword)
         
-        # print(tabResult)
-        # print('-------')
-        
         for hypothesis, score in ips_keywords.items():
             if(isVerified(hypothesis, tabResult)): 
                 score_etu += score
@@ -83,5 +78,3 @@ with open(json_filename, 'w') as json_file:
 # Lire les données du fichier JSON (facultatif)
 with open(json_filename, 'r') as json_file:
     loaded_data = json.load(json_file)
-    # print("Loaded Data:")
-    # print(loaded_data)
