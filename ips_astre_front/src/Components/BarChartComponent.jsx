@@ -42,12 +42,14 @@ export default function BarChart({ students, scores }) {
         label: 'astre',
         data: scores.map((weight) => (weight < 0 ? weight : 0)),
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
+
       },
       {
         label: 'ips',
         data: scores.map((weight) => (weight >= 0 ? weight : 0)),
         backgroundColor: 'rgba(54, 162, 235, 0.5)',
       },
+      
     ],
   };
 

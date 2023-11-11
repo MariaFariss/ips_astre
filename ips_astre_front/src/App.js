@@ -86,31 +86,58 @@ function App() {
   }
   , []);
   
-  return (
-    <div className="App">
-      <h1>IPS ASTRE</h1>
+//   return (
+//     <div className="App">
+//       <h1>IPS ASTRE</h1>
 
-      <select onChange={selectOnclick}>
-        <option value="ips">IPS</option>
-        <option value="astre">ASTRE</option>
-      </select>
+//       <select onChange={selectOnclick}>
+//         <option value="ips">IPS</option>
+//         <option value="astre">ASTRE</option>
+//       </select>
 
-      {hypothesis.map((hypo, index)=>(
-        <div className="chart">
-          <CircularLiner hypothesis={hypo} weightData={weightData[index]} onChange={updateValue}/>
+//       {hypothesis.map((hypo, index)=>(
+//         <div className="chart">
+//           <CircularLiner hypothesis={hypo} weightData={weightData[index]} onChange={updateValue}/>
+//         </div>
+//       ))}
+//       <div className="chart-container">
+//         <div className="chart">
+//           <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
+//         </div>
+//         <div className="chart">
+//           <BarChart students={studentArray} scores={studentScore} />
+//         </div>
+//         {/* <CircularComponant/> */}
+//       </div>
+//     </div>
+//   );
+// }
+return (
+  <div className="App">
+    <h1>IPS ASTRE</h1>
+
+    <select onChange={selectOnclick}>
+      <option value="ips">IPS</option>
+      <option value="astre">ASTRE</option>
+    </select>
+
+    <div className="chart-container">
+      {hypothesis.map((hypo, index) => (
+        <div key={index} className="chart">
+          <CircularLiner hypothesis={hypo} weightData={weightData[index]} onChange={updateValue} />
         </div>
       ))}
-      <div className="chart-container">
-        <div className="chart">
-          <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
-        </div>
-        <div className="chart">
-          <BarChart students={studentArray} scores={studentScore} />
-        </div>
-        {/* <CircularComponant/> */}
+    </div>
+
+    <div className="chart-container">
+      <div className="chart">
+        <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
+      </div>
+      <div className="chart">
+        <BarChart students={studentArray} scores={studentScore} />
       </div>
     </div>
-  );
+  </div>
+);
 }
-
 export default App;

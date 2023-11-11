@@ -54,6 +54,7 @@
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
+  /* height: 400px; */
 }
 
 .CircularLinerComponent {
@@ -64,7 +65,7 @@
 
 
 /* CircularComponant */
-.CircularComponant {
+/* .CircularComponant {
   font-family: sans-serif;
   text-align: center;
   position: relative;
@@ -95,4 +96,15 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+} */
+
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;  /* Adjust as needed*/
+  flex-wrap: wrap;
+}
+
+.chart {
+  margin: 10px; /* Adjust spacing between cards */
 }
