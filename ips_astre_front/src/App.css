@@ -45,7 +45,7 @@
 .chart-container {
   display: flex;
   justify-content: space-between;
-  max-width: 10000px; /* Adjust the width as needed */
+  max-width: 3000px; /* Adjust the width as needed */
   margin: 0 auto;
 }
 
@@ -54,4 +54,9 @@
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
+}
+
+.CircularLinerComponent {
+  font-family: sans-serif;
+  text-align: center;
 }

@@ -1,7 +1,9 @@
 
 import './App.css';
-import DoughnutChart from './DoughnutChartComponent';
-import BarChart from './BarChartComponent';
+import DoughnutChart from './Components/DoughnutChartComponent';
+import BarChart from './Components/BarChartComponent';
+import CircularLiner from './Components/CircularLinerComponent';
+// import AppWidgetSummary from './Components/CartComponants';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
@@ -39,7 +41,7 @@ function App() {
         
         break;
       default:
-        fetchAPIHypothesis("ips");
+        fetchAPIHypothesis("astre");
     }
   }
 
@@ -58,22 +60,14 @@ function App() {
     fetchAPIStudent();
   }
   , []);
-
-  // return (
-  //   <div className="App">
-  //     <h1>IPS ASTRE</h1>
-  //     <select onChange={selectOnclick}>
-  //       <option value="ips">IPS</option>
-  //       <option value="astre">ASTRE</option>
-  //     </select>
-  //     <DoughnutChart hypothesis={hypothesis} weightData={weightData}/>
-  //     <BarChart students={studentArray} weights={weightArray} />
-  //   </div>
-  // );
-
+  
   return (
     <div className="App">
       <h1>IPS ASTRE</h1>
+      <div className="chart">
+        <CircularLiner/>
+      </div>
+    
       <select onChange={selectOnclick}>
         <option value="ips">IPS</option>
         <option value="astre">ASTRE</option>
