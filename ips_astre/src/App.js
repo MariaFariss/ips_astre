@@ -109,10 +109,12 @@ return (
         <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
       </div>
       <div className="chart">
-        <BarChart students={studentArray} scores={studentScore} />
         <PolarChart students={studentArray} scores={studentScore}/>
       </div>
     </div>
+    <div className="bar-chart">
+      <BarChart students={studentArray} scores={studentScore} />
+      </div>
   </div>
 );
 }

@@ -36,7 +36,7 @@ export default function PolarChart({students,scores}) {
     plugins: {
       title: {
         display: true,
-        text: 'Polar Chart Title',
+        text: 'Polar Chart students and scores',
         fontSize: 16,
       },
     },
