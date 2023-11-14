@@ -1,0 +1,110 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.App {
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 3000px;
+  margin: 0 auto;
+}
+
+.chart {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  /* height: 400px; */
+}
+
+.CircularLinerComponent {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+
+
+/* CircularComponant */
+/* .CircularComponant {
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textContainer {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  line-height: 70px;
+  text-align: center;
+  color: #ec008c;
+}
+
+.textContainer .minute {
+  font-size: 18px;
+  line-height: 15px;
+  background: -webkit-linear-gradient(#ec008c, #fc6767);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
+
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;  /* Adjust as needed*/
+  flex-wrap: wrap;
+}
+
+.chart {
+  margin: 10px; /* Adjust spacing between cards */
+}
