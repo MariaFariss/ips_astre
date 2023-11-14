@@ -3,6 +3,7 @@ import './App.css';
 import DoughnutChart from './Components/DoughnutChartComponent';
 import BarChart from './Components/BarChartComponent';
 import CircularLiner from './Components/CircularLinerComponent';
+import PolarChart from './Components/PolarChartComponent'
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
@@ -85,33 +86,7 @@ function App() {
     fetchAPIStudent();
   }
   , []);
-  
-//   return (
-//     <div className="App">
-//       <h1>IPS ASTRE</h1>
 
-//       <select onChange={selectOnclick}>
-//         <option value="ips">IPS</option>
-//         <option value="astre">ASTRE</option>
-//       </select>
-
-//       {hypothesis.map((hypo, index)=>(
-//         <div className="chart">
-//           <CircularLiner hypothesis={hypo} weightData={weightData[index]} onChange={updateValue}/>
-//         </div>
-//       ))}
-//       <div className="chart-container">
-//         <div className="chart">
-//           <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
-//         </div>
-//         <div className="chart">
-//           <BarChart students={studentArray} scores={studentScore} />
-//         </div>
-//         {/* <CircularComponant/> */}
-//       </div>
-//     </div>
-//   );
-// }
 return (
   <div className="App">
     <h1>IPS ASTRE</h1>
@@ -135,6 +110,7 @@ return (
       </div>
       <div className="chart">
         <BarChart students={studentArray} scores={studentScore} />
+        <PolarChart students={studentArray} scores={studentScore}/>
       </div>
     </div>
   </div>

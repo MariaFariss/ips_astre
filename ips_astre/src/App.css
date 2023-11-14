@@ -42,11 +42,14 @@
   text-align: center;
 }
 
+
+
 .chart-container {
   display: flex;
   justify-content: space-between;
-  max-width: 3000px;
+  /* max-width: 3000px; */
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .chart {
@@ -63,48 +66,3 @@
 }
 
 
-
-/* CircularComponant */
-/* .CircularComponant {
-  font-family: sans-serif;
-  text-align: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.textContainer {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 80px;
-  line-height: 70px;
-  text-align: center;
-  color: #ec008c;
-}
-
-.textContainer .minute {
-  font-size: 18px;
-  line-height: 15px;
-  background: -webkit-linear-gradient(#ec008c, #fc6767);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
-
-
-.chart-container {
-  display: flex;
-  justify-content: space-around;  /* Adjust as needed*/
-  flex-wrap: wrap;
-}
-
-.chart {
-  margin: 10px; /* Adjust spacing between cards */
-}
