@@ -49,54 +49,39 @@
   margin: 0 auto;
 }
 
+.test {
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .chart {
+  flex: 1;
+  /* margin: 10px; */
+  padding: 10px; 
+  border: 1px solid #ccc;
+  /* background-color:aliceblue; */
+  height: 400px;
+  justify-content: center;
+}
+
+.chartUpper {
   flex: 1;
   margin: 10px;
   padding: 10px;
   border: 1px solid #ccc;
-  /* height: 400px; */
+  /* background-color:aliceblue; */
 }
 
 .CircularLinerComponent {
   font-family: sans-serif;
   text-align: center;
 }
-
-
-
-/* CircularComponant */
-/* .CircularComponant {
-  font-family: sans-serif;
-  text-align: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.textContainer {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 80px;
-  line-height: 70px;
-  text-align: center;
-  color: #ec008c;
-}
-
-.textContainer .minute {
-  font-size: 18px;
-  line-height: 15px;
-  background: -webkit-linear-gradient(#ec008c, #fc6767);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
 
 
 .chart-container {
@@ -107,4 +92,5 @@
 
 .chart {
   margin: 10px; /* Adjust spacing between cards */
+  display: flex !important;
 }

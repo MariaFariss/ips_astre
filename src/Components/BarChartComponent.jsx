@@ -29,7 +29,7 @@ export default function BarChart({ students, scores }) {
       },
       title: {
         display: true,
-        text: 'Chart.js Bar Chart',
+        text: 'Chart of Students and Scores',
       },
     },
   };

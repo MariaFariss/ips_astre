@@ -86,32 +86,6 @@ function App() {
   }
   , []);
   
-//   return (
-//     <div className="App">
-//       <h1>IPS ASTRE</h1>
-
-//       <select onChange={selectOnclick}>
-//         <option value="ips">IPS</option>
-//         <option value="astre">ASTRE</option>
-//       </select>
-
-//       {hypothesis.map((hypo, index)=>(
-//         <div className="chart">
-//           <CircularLiner hypothesis={hypo} weightData={weightData[index]} onChange={updateValue}/>
-//         </div>
-//       ))}
-//       <div className="chart-container">
-//         <div className="chart">
-//           <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
-//         </div>
-//         <div className="chart">
-//           <BarChart students={studentArray} scores={studentScore} />
-//         </div>
-//         {/* <CircularComponant/> */}
-//       </div>
-//     </div>
-//   );
-// }
 return (
   <div className="App">
     <h1>IPS ASTRE</h1>
@@ -123,15 +97,15 @@ return (
 
     <div className="chart-container">
       {hypothesis.map((hypo, index) => (
-        <div key={index} className="chart">
+        <div key={index} className="chartUpper">
           <CircularLiner hypothesis={hypo} weightData={weightData[index]} onChange={updateValue} />
         </div>
       ))}
     </div>
 
     <div className="chart-container">
-      <div className="chart">
-        <DoughnutChart hypothesis={hypothesis} weightData={weightData} />
+      <div className="chart test">
+        <DoughnutChart hypothesis={hypothesis} weightData={weightData} className="child" />
       </div>
       <div className="chart">
         <BarChart students={studentArray} scores={studentScore} />
