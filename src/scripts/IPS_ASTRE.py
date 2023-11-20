@@ -15,10 +15,9 @@ def extract_csv_data(filename):
 
 csv_data = extract_csv_data('Questionnaires.csv')
 
-#Here i creat a function to verify if all keywords in the answers given by the students
+#Here i create a function to verify if all keywords in the answers given by the students
 def isVerified(hypothesis, answers):
     for keyword in hypothesis:
-        # print(keyword)
         if keyword not in answers:
             return False
     return True
@@ -70,11 +69,4 @@ structured_data = transform_to_data_structure()
 # Modélisation des données sous forme d'une structure adaptée (ici, un dictionnaire)
 print(structured_data)
 
-# I write tha data in json file that will helps me for my api
-json_filename = 'structured_data.json'
-with open(json_filename, 'w') as json_file:
-    json.dump(structured_data, json_file, indent=4)
 
-# Lire les données du fichier JSON (facultatif)
-with open(json_filename, 'r') as json_file:
-    loaded_data = json.load(json_file)

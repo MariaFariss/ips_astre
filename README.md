@@ -1,4 +1,4 @@
-# Student Option Prediction Project
+# Student IPS/ASTRE Prediction Project
 
 The primary goal of this project is to formulate hypotheses and anticipate the forthcoming option selections (Astre or IPS) made by students at our school. This prediction is founded on the analysis of questionnaire responses. Additionally, there is a web interface accessible for reviewing outcomes and making adjustments to the formulated hypotheses.
 
@@ -32,4 +32,4 @@ To start the front-end server, use the following command:
 npm run start
 ```
 
-Enjoy exploring the data and predicting student option choices!
+Hope you enjoy!!!
