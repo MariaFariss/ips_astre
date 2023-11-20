@@ -88,8 +88,7 @@ function App() {
   
 return (
   <div className="App">
-    <h1>IPS ASTRE</h1>
-
+    <h1>Student IPS/ASTRE Prediction Project</h1>
     <select onChange={selectOnclick}>
       <option value="ips">IPS</option>
       <option value="astre">ASTRE</option>

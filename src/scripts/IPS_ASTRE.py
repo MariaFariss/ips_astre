@@ -66,7 +66,6 @@ def transform_to_data_structure(data=csv_data, ips_keywords=astre_keywords, astr
 
 structured_data = transform_to_data_structure()
 
-# Modélisation des données sous forme d'une structure adaptée (ici, un dictionnaire)
 print(structured_data)
 
 
