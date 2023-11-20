@@ -31,5 +31,3 @@ To start the front-end server, use the following command:
 ```bash
 npm run start
 ```
-
-Hope you enjoy!!!
